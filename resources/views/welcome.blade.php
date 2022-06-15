@@ -19,7 +19,7 @@
     <main id="app">
         <App></App>
     </main>
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>
