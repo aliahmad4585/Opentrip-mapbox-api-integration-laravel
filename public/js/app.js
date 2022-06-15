@@ -2482,7 +2482,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 //
 //
 //
-//
 
 
 
@@ -22555,8 +22554,6 @@ var render = function () {
         { staticClass: "container" },
         [
           _c("center", [
-            _c("p", [_vm._v("Laravel")]),
-            _vm._v(" "),
             _c(
               "form",
               {
