@@ -43,7 +43,7 @@ class LocationRequest extends FormRequest
     public function rules()
     {
         return [
-            'searchTerm' => 'required|min:4|string',
+            'searchTerm' => 'required|string',
             'offset' => 'required|integer'
         ];
     }

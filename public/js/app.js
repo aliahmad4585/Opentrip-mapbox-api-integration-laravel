@@ -2581,7 +2581,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
               case 16:
                 _context.prev = 16;
                 _context.t0 = _context["catch"](0);
-                alert("Oops! Something went wrong");
+                alert(_context.t0);
 
               case 19:
               case "end":
