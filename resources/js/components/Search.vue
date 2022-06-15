@@ -2,7 +2,6 @@
     <div>
         <div class="container">
             <center>
-                <p>Laravel</p>
                 <form id="search_form" class="input-group mb-4 border p-1" @submit.prevent="enterPressed">
                     <div class="input-group-prepend border-0">
                         <button id="button-search" type="submit" class="btn btn-link ">
