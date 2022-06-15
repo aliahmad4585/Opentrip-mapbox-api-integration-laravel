@@ -128,7 +128,7 @@ export default {
                     nearByPlaces: this.places.searchResult
                 });
             } catch (error) {
-                alert("Oops! Something went wrong")
+                alert(error)
             }
         },
 
