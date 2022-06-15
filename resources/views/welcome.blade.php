@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Web dev skills challenge boilerplate</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
-    </head>
-    <body>
-        <main id="app">
-            <example-component></example-component>
-        </main>
-        <script src="{{ mix('js/app.js') }}"></script>
-    </body>
+    <title>Skill Challenge</title>
+
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+
+<body>
+    <main id="app">
+        <App></App>
+    </main>
+    <script src="{{ mix('js/app.js') }}"></script>
+</body>
+
 </html>

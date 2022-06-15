@@ -1,5 +1,7 @@
 <?php
 
+use App\Facades\Helpers\HttpFacade;
+
 return [
 
     /*
@@ -175,6 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
+        App\Providers\FacadesServiceProvider::class,
 
     ],
 
@@ -228,7 +231,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'HttpCall' => App\Facades\Helpers\HttpFacade::class,
+        'Location' => App\Facades\Helpers\LocationFacade::class,
     ],
 
 ];

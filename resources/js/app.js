@@ -1,7 +1,15 @@
-import { createApp, defineAsyncComponent } from 'vue';
 
+window.Vue = require('vue/dist/vue');
+
+import App from './components/App'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 require('./bootstrap');
 
-createApp({})
-  .component('example-component', defineAsyncComponent(() => import('./components/example-component')))
-  .mount('#app');
+new Vue({
+    el: '#app',
+    template: '<App/>',
+    components: { App },
+})
