@@ -1,37 +1,40 @@
-# Web dev skills challenge boilerplate
+# Opentrip and mapbox api integration
+application allow the user to search of a places of interest search and visualization application. With this application it should be possible for a user to provide a location name and receive a visual representation of places of interest around this location
 
-## Installation requirements
+# Demo
+http://still-waters-02760.herokuapp.com/
+
+# Installation requirements
+- PHP 7|8.1
+- Laravel 8.4
+- VueJS 2
+- composer
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
-## Version control
+## Installation
 
-### Git
-Set [your identity](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+- git clone https://github.com/aliahmad4585/Opentrip-mapbox-api-integration-laravel.git
+- git checkout master
+- Run **composer install**
+- Run **php artisan key:generate**
+- copy env.example to .env 
+- add mapBox and opentrip api access keys in env file
+- npm install
+- npm run dev
+- php artisan serve
 
-## Install / start application
-1) Clone the application locally
-2) `cd web-dev-skills-challenge-boilerplate`
-3) Install composer dependencies through the container https://laravel.com/docs/8.x/sail#installing-composer-dependencies-for-existing-projects
-4) `cp .env.example .env`
-5) `./vendor/bin/sail up`
-6) `./vendor/bin/sail artisan key:generate`
-7) `./vendor/bin/sail npm install`
-8) `./vendor/bin/sail npm run dev`
-9) `./vendor/bin/sail artisan migrate`
-10) `./vendor/bin/sail artisan db:seed`
+# Docker container
+- Run "docker-compose build" to make a container
+- Run "docker-compose up -d" to run the container
 
-## Access application
-[http://localhost](http://localhost)
 
-## Push to remote
+# Run test cases
 
-### Github
-Create [personal access token](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token) with scope 'repo'
+## unit test cases
+- ./vendor/bin/phpunit
 
-## 3rd-party documentation
-- [Laravel](https://laravel.com/docs/8.x)
-- [Laravel Sail](https://laravel.com/docs/8.x/sail)
-- [Laravel Mix](https://laravel-mix.com/docs/6.0/what-is-mix)
-- [Vue](https://v3.vuejs.org/guide/introduction.html)
-- [Tailwind](https://tailwindcss.com/docs)
-- [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/)
+## end to end / automation test
+ - php artisan dusk
+
+
+
