@@ -14,7 +14,7 @@ class LocationHelper
      * @return int $number_of_pages
      */
 
-    public function getNumberOfPages($totalCount, $pageSize)
+    public function getNumberOfPages(int $totalCount, int $pageSize): int
     {
         $numberOfPages = $totalCount / $pageSize;
         $expArr = explode('.', $numberOfPages);
@@ -33,7 +33,7 @@ class LocationHelper
      * @return string $url
      */
 
-    public function getGeoNameLocationUrl($searchTerm = null)
+    public function getGeoNameLocationUrl(string|null $searchTerm = null): string
     {
         $baseUrl =  config('opentrip.url.base');
         $uri =  config('opentrip.url.geoUri');
@@ -47,12 +47,14 @@ class LocationHelper
     /**
      * return the complete url for search of Nearbylocation
      *
-     * @param string $searchTerm
+     * @param int $offset
+     * @param int|float $lat
+     * @param int|float $lon
      *
      * @return string $url
      */
 
-    public function getNearbyLocationsUrl($offset, $lat, $lon)
+    public function getNearbyLocationsUrl(int $offset, int|float $lat, int|float $lon): string
     {
         $baseUrl =  config('opentrip.url.base');
         $uri =  config('opentrip.url.radiusUri');

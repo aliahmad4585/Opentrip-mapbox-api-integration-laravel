@@ -6,6 +6,17 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class SuccessResource extends JsonResource
 {
+
+    /**
+     * Convert the collection to its string representation.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toJson();
+    }
+
     /**
      * Transform the resource into an array.
      *
@@ -15,10 +26,10 @@ class SuccessResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "statusCode" => $this->statusCode ?? 200,
-            "message"     => $this->message ?? "Success",
-            "error"       => $this->error ?? null,
-            "data"        => $this->data ?? null
+            "statusCode" => $this->resource->statusCode ?? 200,
+            "message"     => $this->resource->message ?? "Success",
+            "error"       => $this->resource->error ?? null,
+            "data"        => $this->resource ?? null
         ];
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Helpers;
+
 use App\Exceptions\HttpCallException;
 
 class HttpHelper
@@ -13,11 +14,14 @@ class HttpHelper
      * @param array $body (Optional)
      * @return mixed
      */
-    public function curlExecute($type, $url, $headers = [], $body = null)
-    {
+    public function curlExecute(
+        string $type,
+        string $url,
+        array $headers = [],
+        array|string $body = null
+    ): mixed {
 
         try {
-
             $options = array(
                 CURLOPT_URL             => $url,
                 CURLOPT_RETURNTRANSFER  => true,

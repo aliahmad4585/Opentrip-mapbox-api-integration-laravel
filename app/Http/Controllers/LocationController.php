@@ -34,13 +34,19 @@ class LocationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  App\Http\Requests\LocationRequest  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response | App\Http\Resources
      */
     public function getLocations(LocationRequest $request)
     {
         try {
             $searchLocation =   $this->locationService->getLocations($request);
-            return response()->json($searchLocation, 200);
+            $errors = [
+                "statusCode" => 200,
+                "message" => "Success",
+                "error" => null,
+                "data" => $searchLocation
+            ];
+            return new SuccessResource($searchLocation);
         } catch (HttpCallException |  LocationException | \Throwable $th) {
             $errors = [
                 "statusCode" => 504,
@@ -48,7 +54,6 @@ class LocationController extends Controller
                 "error" => $th->getMessage(),
                 "data" => null
             ];
-
             return new ErrorResource($errors);
         }
     }

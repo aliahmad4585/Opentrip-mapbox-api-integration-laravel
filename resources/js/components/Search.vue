@@ -110,10 +110,11 @@ export default {
                     }
                 });
 
-                res = await res.data;
+                res = await res.data.data;
                 this.places.searchPlace = res.searchedLocation;
                 this.places.totalPlaces = res.total
                 let nearByPlaces = res.nearByLocations;
+                
                 for (let place of nearByPlaces) {
 
                     place.kinds = place.kinds.split(',')[0]

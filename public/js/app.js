@@ -2545,7 +2545,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
               case 3:
                 res = _context.sent;
                 _context.next = 6;
-                return res.data;
+                return res.data.data;
 
               case 6:
                 res = _context.sent;

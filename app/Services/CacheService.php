@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Cache;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class CacheService
 {
@@ -10,12 +11,12 @@ class CacheService
     /**
      * check key exist in cache 
      *
-     * @param  string searchTerm
+     * @param  string $key
      * 
      * @return boolean 
      */
 
-    public function checkIfKeyExist($key)
+    public function checkIfKeyExist(string $key): bool
     {
 
         if (Cache::has(strtolower($key))) {
@@ -29,27 +30,30 @@ class CacheService
     /**
      * store the values with keys 
      *
-     * @param  array  $keys
+     * @param  string $key
+     * @param  array $locations
      * 
      * @return void 
      */
-    public function store($key, $values)
+    public function store(string $key, array $locations): void
     {
         Cache::forget($key);
-        Cache::rememberForever(strtolower($key), function () use ($values) {
-            return  $values;
+        Cache::rememberForever(strtolower($key), function () use ($locations) {
+            return  $locations;
         });
     }
 
     /**
-     * get the values from cache based on tree
+     * get the location from cache based on tree
      *
-     * @param  array  $keys
+     * @param string  $key
      * 
-     * @return void 
+     * @return array  $locations
      */
-    public function get($key)
+    public function get(string $key): array|null 
     {
-        return Cache::get(strtolower($key));
+        $locations =  Cache::get(strtolower($key));
+
+        return $locations;
     }
 }
